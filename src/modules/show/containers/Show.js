@@ -76,7 +76,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchTVShowMeta: (params, callback) => dispatch(fetchTVShowMeta(params, callback)),
+  fetchTVShowMeta: (id, callback) => dispatch(fetchTVShowMeta(id, callback)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Show);

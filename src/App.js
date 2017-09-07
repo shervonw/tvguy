@@ -19,17 +19,15 @@ const history = createHistory();
 class App extends Component {
   
   state = {
-    isMenuOpen: true
+    isMenuOpen: false
   }
 
   componentDidMount() {
     window.onresize = (e) => {
       const { isMenuOpen } = this.state;
 
-      if (e.currentTarget.innerWidth >= 1024) {
-        if (!isMenuOpen) {
-          document.getElementById("sidenav").style.width = "200px";
-        }
+      if (e.currentTarget.innerWidth >= 1024 && !isMenuOpen) {
+        document.getElementById("sidenav").style.width = "200px";
 
         this.setState({
           isMenuOpen: !isMenuOpen
