@@ -1,0 +1,76 @@
+
+.ratings {
+  width: stretch;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.ratings li {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 49%;
+  margin: 0;
+}
+
+.rating-container {
+  padding: 0 0.8rem; 
+}
+
+.rating {
+  font-weight: 600;
+}
+
+.rating-text {
+  font-size: 0.75rem;
+}
+
+.tv-show-poster {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.tv-show-poster-img {
+  margin-right: 1.4rem;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 425px) {
+  .tv-show-poster {
+    flex-direction: column;
+  }
+  .tv-show-poster-img {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .tv-show-poster-img {
+    height: 441px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 425px) {
+  .tv-show-poster-img {
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+  .tv-show-poster-img {
+    height: 441px;
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .tv-show-poster-img {
+    height: 500px;
+    width: 340px;
+  }
+}

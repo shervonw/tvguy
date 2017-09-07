@@ -1,0 +1,1 @@
+export { default as SuggestedShows } from './SuggestedShows/SuggestedShows';

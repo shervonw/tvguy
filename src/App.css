@@ -1,0 +1,99 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.content-layout {
+  margin-top: 3.5rem
+}
+
+img.responsive-img {
+  min-height: 100%;
+}
+
+.time-calendar-container {
+  min-height: 8.75rem!important;
+}
+
+.poster-container {
+  width: 100%;
+  height: inherit;
+  overflow-x: scroll;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.poster-image-container {
+  width: 5rem;
+  height: 7rem;
+}
+
+.poster-block {
+  display: inline-block;
+  position: relative;
+  width: 5rem;
+  height: 7rem;
+  margin: 0.5rem;
+}
+
+.poster-image {
+  width: 5rem;
+  height: 100%;
+}
+
+.poster-title {
+  position: absolute;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0 0.5rem;
+  width: 100%;
+  color: #eee;
+  bottom: 0;
+}
+
+.poster-episode-summary {
+  line-height: 1.2rem;
+  font-size: 0.8rem;
+  margin: auto;
+  height: 100%;
+  width: 90%;
+  text-align: justify;
+  overflow: hidden;
+  color: #eee;
+}
+
+.cloak-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%!important;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.poster-block:hover .cloak-overlay {
+  opacity: 1;
+  background: rgba(0,0,0,0.8);
+}

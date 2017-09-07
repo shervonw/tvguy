@@ -1,0 +1,53 @@
+.details {
+  width: stretch;
+}
+
+.details h1 {
+  font-weight: 600;
+  margin: 0;
+  font-size: 2.2rem;
+  margin: 1.56rem 0;
+}
+
+.details h1 > span {
+  color: #959595;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.details table > tbody {
+  font-size: 0.85rem;
+}
+
+.details table > tbody > tr td:nth-child(odd) {
+  text-transform: uppercase;
+  color: #959595;
+  font-weight: bold;
+}
+
+.external li {
+  display: inline-block;
+  padding: 0.25rem;
+}
+
+.external li a {
+  background: #D0D0D0;
+  color: #3D3D3D;
+  padding: 0.2rem 0.3rem;
+  border: solid 1px #A7A9A1;
+  border-radius: 0.2rem;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+  .details table > tbody > tr td:nth-child(odd) {
+    width: 35%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .details table > tbody > tr td:nth-child(odd) {
+    width: 20%;
+  }
+}

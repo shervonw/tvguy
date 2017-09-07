@@ -1,0 +1,42 @@
+.recent-episode-container h5 {
+  margin-bottom: 1.7rem;
+}
+
+.recent-episode-container h5 > b {
+  font-weight: 600;
+}
+
+.recent-episode-container h5 > span {
+  font-weight: 300;
+  padding: 0.5rem;
+}
+
+.recent-episode-poster-container {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+}
+
+.recent-episode-titles-container {
+  position: absolute;
+  left: 0.625rem;
+  bottom: 7%;
+}
+
+.recent-episode-titles-container > a > div > span {
+  font-size: 0.7rem;
+  padding: 3px 5px;
+  width: 100%;
+}
+
+.recent-episode-titles-container .recent-episode-titles {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  text-shadow: 0 0 2rem #000;
+}
+
+.recent-episode-titles > b {
+  font-weight: 600;
+  padding: 0.2rem;
+}
