@@ -1,0 +1,24 @@
+ .episode-poster-container {
+  display: flex;
+  justify-content: center;
+  height: 450px;
+  width: 100%;
+ }
+
+@media screen and (max-width: 320px) {
+  .episode-poster-container {
+    height: 180px;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 425px) {
+  .episode-poster-container {
+    height: 220px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .episode-poster-container {
+    height: 550px;
+  }
+}

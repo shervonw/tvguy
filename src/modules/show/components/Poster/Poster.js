@@ -1,7 +1,7 @@
 import React from 'react';
 import { resolveImagePath } from '../../../core/utilities';
 import {
-  Icon
+  Row, Col, Icon
 } from 'react-materialize';
 import AdditionalStats from '../AdditionalStats';
 import './style.css';
@@ -19,22 +19,29 @@ const Poster = ({ show }) => {
       </div>
       <div style={{ marginTop: 8 }}>
         <div className="divider"></div>
-        <ul className="ratings">
-          <li>
+        <Row className="ratings">
+          <Col s={6} m={4} className="rating-item">
             <Icon small className="blue-text text-darken-1" >thumb_up</Icon>
             <div className="rating-container">
               <div className="rating">{ `${show.rating.average || 0} / 10` }</div>
               <div className="rating-text">average</div>
             </div>
-          </li>
-          <li>
+          </Col>
+          <Col s={6} m={4} className="rating-item">
             <Icon small className="red-text text-darken-1" >favorite</Icon>
             <div className="rating-container">
               <div className="rating">{ show.weight || 0 }%</div>
               <div className="rating-text">weight</div>
             </div>
-          </li>
-        </ul>
+          </Col>
+          <Col s={12} m={4} className="rating-item">
+            <Icon small className="amber-text text-darken-1" >star_border</Icon>
+            <div className="rating-container">
+              <div className="rating">Favorite</div>
+              <div className="rating-text">{ show.name }</div>
+            </div>
+          </Col>
+        </Row>
       </div>
     </div>
   );

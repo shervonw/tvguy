@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Row, Col, Icon } from 'react-materialize';
 import { fetchTVShowMeta } from '../actions';
 import { Summary } from '../../core/components';
-import {
-  Row, Col
-} from 'react-materialize';
-
-
-
 import {
   Poster,
   RecentEpisode,
@@ -53,8 +48,10 @@ class Show extends Component {
           <Col s={12}
             style={{ display: 'flex', height: '100%', justifyContent: 'center', alignItems: 'center', paddingTop: 20, paddingBottom: 20 }}
           >
-            <div >
-              <a>{ 'View more episodes...' }</a>
+            <div>
+              <a style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textTransform: 'uppercase', fontSize: 12,  }}>
+                { 'View all episodes' } <Icon tiny>navigate_next</Icon>
+              </a>
             </div>
           </Col>
         </Row>

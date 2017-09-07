@@ -11,7 +11,9 @@ const Seasons = ({ seasons }) => {
     <Row>
       <Col s={12}>
 
-        <h4 style={{ fontWeight: 500, textAlign: 'center', marginTop: '50px', }}>Seasons</h4>
+        <h4 style={{ fontWeight: 500, textAlign: 'center', marginTop: '50px', }}>
+          {`${seasons.length} Seasons`}
+        </h4>
         <div className="divider"></div>
         <div style={{ marginTop: '10px' }}>
           {

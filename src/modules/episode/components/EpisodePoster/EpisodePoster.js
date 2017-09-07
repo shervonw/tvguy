@@ -1,22 +1,21 @@
 import React from 'react';
+import { Row, Col, Icon } from 'react-materialize';
 import { resolveImagePath } from '../../../core/utilities';
-import {
-  Icon
-} from 'react-materialize';
 import Stats from '../Stats';
+import './style.css';
 
 const EpisodePoster = ({ episode }) => {
   const posterImage = (episode.image) ? episode.image.original : null;
 
-  console.log(posterImage)
-
   return (
     <div>
-      <div style={{ background: '#3D3D3D',width: '100%' }}>
-        <div style={{ display: 'flex', justifyContent: 'center', height: 450 }}>
-          <img style={{ height: 'inherit', width: 'inherit', }} src={ resolveImagePath(posterImage, true) } alt={ episode.name } />
-        </div>
-      </div>
+      <Row>
+        <Col s={12}>
+          <div className="episode-poster-container">
+            <img className="responsive-img" src={ resolveImagePath(posterImage, true) } alt={ episode.name } />
+          </div>
+        </Col>
+      </Row>
       <Stats episode={ episode } /> 
     </div>
   );

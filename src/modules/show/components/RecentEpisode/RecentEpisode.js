@@ -1,9 +1,7 @@
 import React from 'react';
 import moment from 'moment';
+import { Col } from 'react-materialize';
 import { pad, resolveImagePath } from '../../../core/utilities';
-import {
-  Col
-} from 'react-materialize';
 import './style.css';
 
 const RecentEpisode = ({ id, episode, title }) => {
