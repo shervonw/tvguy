@@ -18,7 +18,7 @@ const RecentEpisode = ({ id, episode, title }) => {
         <div className="recent-episode-poster-container">
           <img className="responsive-img" src={ resolveImagePath(posterImage, true) } alt={ episode.name }/>
           <div className="recent-episode-titles-container">
-            <a href={ `/show/${id}/season/${episode.season}/episode/${episode.number}` }>
+            <a href={ `/shows/${id}/seasons/${episode.season}/episodes/${episode.number}` }>
               <div>
                 <span className="blue white-text">
                   { moment(episode.airstamp).format("MMM D, YYYY h:mm a") }

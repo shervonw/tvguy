@@ -1,2 +1,3 @@
-export * from './show';
-export * from './episode';
+export * from './shows';
+export * from './seasons';
+export * from './episodes';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Icon } from 'react-materialize';
+import { Row, Col } from 'react-materialize';
 import { resolveImagePath } from '../../../core/utilities';
 import Stats from '../Stats';
 import './style.css';

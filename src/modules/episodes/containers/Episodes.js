@@ -6,10 +6,10 @@ import {
 } from '../actions';
 import {
   fetchTVShowMeta
-} from '../../show/actions';
+} from '../../shows/actions';
 import { Summary } from '../../core/components';
 import {
-  Row, Col
+  Preloader, Row, Col
 } from 'react-materialize';
 
 import {
@@ -61,7 +61,13 @@ class Episode extends Component {
 
         <Row>
           <Col s={12}>
-            { !episode.streamingLinks &&  "Searching for streaming links..."}
+            { 
+              !episode.streamingLinks && 
+              <div style={{ display: 'flex', alignItems: 'center', }}>
+                <p style={{ paddingRight: 16 }}>Searching for streaming links...</p>
+                <Preloader size='small'/>
+              </div>
+            }
           </Col>
         </Row>
         
@@ -70,6 +76,7 @@ class Episode extends Component {
           <Row>
             <Col s={12}>
               <h5>Watch NOW!</h5>
+              <div className="divider"></div>
               {
                 episode.streamingLinks.map((provider, index) => {
                   return (

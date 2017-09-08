@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
-import { Icon, Row } from 'react-materialize';
+import { Row } from 'react-materialize';
 
 import createHistory from 'history/createBrowserHistory';
 import store from './store';
@@ -10,8 +10,8 @@ import './App.css';
 
 import { NavBar } from './modules/core/components';
 import { Home } from './modules/home';
-import { Show } from './modules/show';
-import { Episode } from './modules/episode';
+import { Shows } from './modules/shows';
+import { Episodes } from './modules/episodes';
 
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory();
@@ -68,8 +68,8 @@ class App extends Component {
               </div>
               <div id="main">
                 <Route exact path="/" component={ Home } />
-                <Route exact path="/show/:id" component={ Show } /> 
-                <Route exact path="/show/:id/season/:season/episode/:episode" component={ Episode } /> 
+                <Route exact path="/shows/:id" component={ Shows } /> 
+                <Route exact path="/shows/:id/seasons/:season/episodes/:episode" component={ Episodes } /> 
               </div>
             </div>
           }

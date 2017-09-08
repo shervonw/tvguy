@@ -5,7 +5,9 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <SuggestedShows />
+        <div style={{ width: 200, height: 300, background: '#000' }}>
+          <SuggestedShows />
+        </div>
       </div>
     );
   }

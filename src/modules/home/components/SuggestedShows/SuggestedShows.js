@@ -3,7 +3,7 @@ import React from 'react';
 const SuggestedShows = () => {
   return (
     <div>
-      Hello
+      <h1>Hello</h1>
     </div>
   );
 }
