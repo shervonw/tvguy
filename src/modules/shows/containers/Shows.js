@@ -53,10 +53,10 @@ class Shows extends Component {
 
             { (shows && shows.length > 0) &&
               <Col s={12} style={{ color: 'rgba(0,0,0,0.6)' }}>
-                <p>
+                <p style={{ fontSize: 12 }}>
                   {`Showing results for "${searchText}" `}
                 </p>
-                <p style={{ marginTop: '-12px', fontSize: 12 }}>
+                <p style={{ marginTop: '-12px', fontSize: 11 }}>
                   {`${ shows.length } found`}
                 </p>
               </Col>

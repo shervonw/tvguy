@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row } from 'react-materialize';
+import { Row, Col } from 'react-materialize';
 
 
 const TopNav = ({ history, onClick }) => {
@@ -10,9 +10,12 @@ const TopNav = ({ history, onClick }) => {
   return(
     <div id="topnav" className="container">
       <Row>
-        <div style={ navStyle } onClick={ onClick }>
+        <Col s={12} style={ navStyle } onClick={ onClick }>
           menu
-        </div>
+        </Col>
+        <Col s={12}>
+          <div className="divider"></div>
+        </Col>
       </Row>
     </div>
   );
@@ -22,11 +25,11 @@ const navStyle = {
   display: 'flex', 
   alignItems: 'center', 
   justifyContent: 'flex-end', 
-  width: '100%', height: 40, 
+  width: '100%', height: 50, 
   background: '#fff', 
   paddingTop: 20,
   paddingRight: 10,
-  boxSizing: 'border-box',
+  paddingBottom: 20,
   textTransform: 'uppercase'
 }
 

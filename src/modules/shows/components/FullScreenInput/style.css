@@ -19,6 +19,6 @@ input[type=text].full-screen-input:focus:not([readonly]) {
 
 @media screen and (max-width: 425px) {
   .full-screen-input {
-    font-size: 2rem !important;
+    font-size: 1.9rem !important;
   }
 }

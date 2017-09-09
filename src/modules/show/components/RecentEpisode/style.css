@@ -41,10 +41,26 @@
   padding: 0.2rem;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 320px) {
   .recent-episode-poster-container {
-    position: relative;
-    height: 12.8rem;
-    overflow: hidden;
+    height: 12.5rem;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  .recent-episode-poster-container {
+    height: 14rem;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 425px) {
+  .recent-episode-poster-container {
+    height: 15.5rem;
+  }
+}
+
+@media screen and (min-width: 426px) {
+  .recent-episode-poster-container {
+    height: 12.5rem;
   }
 }
