@@ -1,0 +1,19 @@
+.view-all-epsiodes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 13px;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  border-radius: 4px;
+  padding: 1rem 1.2rem;
+  background: #eee;
+  color: #3D3D3D;
+  cursor: pointer;
+}
+
+.view-all-epsiodes:hover {
+  color: #eee;
+  background: #3D3D3D;
+}

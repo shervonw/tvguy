@@ -11,6 +11,7 @@ const Stats = ({ episode }) => {
       return 's';
     }
   }
+  
   return (
     <div className="details">
       { (episode.number === 1) &&

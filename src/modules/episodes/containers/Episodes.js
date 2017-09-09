@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Summary } from '../../core/components';
 import { 
   fetchTVShowEpisode, 
   fetchTVShowStreamingLinks
 } from '../actions';
 import {
-  fetchTVShowMeta
-} from '../../shows/actions';
-import { Summary } from '../../core/components';
+  fetchTVShowData
+} from '../../show/actions';
 import {
   Preloader, Row, Col
 } from 'react-materialize';
-
 import {
   EpisodePoster,
 } from '../components';
@@ -20,12 +19,12 @@ import {
 class Episode extends Component {
   componentWillMount() {
     const {
-      fetchTVShowMeta,
+      fetchTVShowData,
       fetchTVShowEpisode,
       match
     } = this.props;
 
-    fetchTVShowMeta(match.params.id);
+    fetchTVShowData(match.params.id);
     fetchTVShowEpisode(match.params.id, match.params.season, match.params.episode);
   }
 
@@ -36,8 +35,8 @@ class Episode extends Component {
       fetchTVShowStreamingLinks
     } = nextProps;
 
-    if (show && show._meta && episode && !episode.streamingLinks) {
-      fetchTVShowStreamingLinks(show._meta.name, episode);
+    if (show && episode && !episode.streamingLinks) {
+      fetchTVShowStreamingLinks(show.name, episode);
     }
   }
 
@@ -48,6 +47,13 @@ class Episode extends Component {
       return false;
     }
 
+    if (episode.streamingLinks && episode.streamingLinks.length === 0) {
+      const message = `We are unable to provide streaming links for ${episode.name}`;
+      window.Materialize.toast(message, 4000);
+    }
+
+    const summary = episode.summary || '<div />';
+
     return (
       <div className="container">
         
@@ -55,7 +61,7 @@ class Episode extends Component {
 
         <Row>
           <Col s={12}>
-            <Summary summary={ episode.summary } />
+            <Summary summary={ summary } summaryStyle={{ marginTop: 50, marginBottom: 50 }} />
           </Col>
         </Row>
 
@@ -116,7 +122,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchTVShowEpisode: (id, season, episode, callback) => dispatch(fetchTVShowEpisode(id, season, episode, callback)),
   fetchTVShowStreamingLinks: (name, episode) => dispatch(fetchTVShowStreamingLinks(name, episode)),
-  fetchTVShowMeta: (params, callback) => dispatch(fetchTVShowMeta(params, callback)),
+  fetchTVShowData: (params, callback) => dispatch(fetchTVShowData(params, callback)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Episode);

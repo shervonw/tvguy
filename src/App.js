@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
-import { Row } from 'react-materialize';
 
 import createHistory from 'history/createBrowserHistory';
 import store from './store';
 import './App.css';
 
-import { NavBar } from './modules/core/components';
+import { NavBar, TopNav } from './modules/core/components';
 import { Home } from './modules/home';
+import { Show } from './modules/show';
 import { Shows } from './modules/shows';
 import { Episodes } from './modules/episodes';
 
@@ -25,9 +25,10 @@ class App extends Component {
   componentDidMount() {
     window.onresize = (e) => {
       const { isMenuOpen } = this.state;
+      const sidenav = document.getElementById("sidenav");
 
-      if (e.currentTarget.innerWidth >= 1024 && !isMenuOpen) {
-        document.getElementById("sidenav").style.width = "200px";
+      if (e.currentTarget.innerWidth >= 1024 && !isMenuOpen && sidenav) {
+        sidenav.style.width = "200px";
 
         this.setState({
           isMenuOpen: !isMenuOpen
@@ -38,11 +39,16 @@ class App extends Component {
 
   openMenuButtonClick(e) {
     const { isMenuOpen } = this.state;
+    const sidenav = document.getElementById("sidenav");
+    
+    if (!sidenav) {
+      return;
+    }
 
     if (isMenuOpen) {
-      document.getElementById("sidenav").style.width = "0px";
+      sidenav.style.width = "0px";
     } else {
-      document.getElementById("sidenav").style.width = "200px";
+      sidenav.style.width = "200px";
     }
 
     this.setState({
@@ -55,40 +61,21 @@ class App extends Component {
       <Provider store={store}>
         { /* ConnectedRouter will use the store from Provider automatically */ }
         <ConnectedRouter history={ history }>
-          {
-            (history.location.pathname !== '/') &&
+          <div>
             <div>
               <NavBar history={ history } />
-              <div id="topnav" className="container">
-                <Row>
-                  <div style={navStyle} onClick={(e) => this.openMenuButtonClick(e)}>
-                    menu
-                  </div>
-                </Row>
-              </div>
-              <div id="main">
-                <Route exact path="/" component={ Home } />
-                <Route exact path="/shows/:id" component={ Shows } /> 
-                <Route exact path="/shows/:id/seasons/:season/episodes/:episode" component={ Episodes } /> 
-              </div>
+              <TopNav history={ history } onClick={ (e) => this.openMenuButtonClick(e) } />
             </div>
-          }
+
+            <Route exact path="/" component={ Home } />
+            <Route exact path="/shows" component={ Shows } /> 
+            <Route exact path="/shows/:id" component={ Show } /> 
+            <Route exact path="/shows/:id/seasons/:season/episodes/:episode" component={ Episodes } />
+          </div>
         </ConnectedRouter>
       </Provider>
     );
   }
-}
-
-const navStyle = {
-  display: 'flex', 
-  alignItems: 'center', 
-  justifyContent: 'flex-end', 
-  width: '100%', height: 40, 
-  background: '#fff', 
-  paddingTop: 20,
-  paddingRight: 10,
-  boxSizing: 'border-box',
-  textTransform: 'uppercase'
 }
 
 export default App;

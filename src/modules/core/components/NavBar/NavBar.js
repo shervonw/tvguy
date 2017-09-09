@@ -7,6 +7,10 @@ import './style.css';
 class NavBar extends Component {
 
   render() {
+    if (this.props.history.location.pathname === '/') {
+      return null;
+    }
+
     return (
       <div>
         <div id="sidenav" className="sidenav-container">

@@ -13,7 +13,7 @@
 
 .recent-episode-poster-container {
   position: relative;
-  height: auto;
+  height: 17.4rem;
   overflow: hidden;
 }
 
@@ -39,4 +39,12 @@
 .recent-episode-titles > b {
   font-weight: 600;
   padding: 0.2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .recent-episode-poster-container {
+    position: relative;
+    height: 12.8rem;
+    overflow: hidden;
+  }
 }

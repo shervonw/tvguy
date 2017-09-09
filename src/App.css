@@ -28,7 +28,7 @@
 }
 
 img.responsive-img {
-  min-height: 100%;
+  height: stretch;
 }
 
 .time-calendar-container {

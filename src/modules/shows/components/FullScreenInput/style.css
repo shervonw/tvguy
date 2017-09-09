@@ -1,0 +1,24 @@
+.full-screen-input {
+  height: stretch !important;
+  border: none !important;
+  text-align: -webkit-center !important;
+  font-size: 2.5rem !important;
+  color: rgba(0,0,0,0.7);
+}
+
+input[type=text].full-screen-input:focus:not([readonly]) {
+  border: none;
+  box-shadow: none;
+}
+
+@media screen and (max-width: 375px) {
+  .full-screen-input {
+    font-size: 1.4rem !important;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .full-screen-input {
+    font-size: 2rem !important;
+  }
+}
