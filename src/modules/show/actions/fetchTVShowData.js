@@ -13,6 +13,9 @@ const fetchTVShowData = (id, callback) => dispatch => {
         type: FETCH_TV_SHOW_DATA, 
         payload: show 
       });
+
+      if (callback)
+        callback(res.body);
       
     }
   });

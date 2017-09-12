@@ -11,6 +11,27 @@ input[type=text].full-screen-input:focus:not([readonly]) {
   box-shadow: none;
 }
 
+.full-screen-input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  white-space: pre-wrap;
+  line-height: 2.8rem;
+}
+.full-screen-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  white-space: pre-wrap;
+  line-height: 2.8rem;
+}
+.full-screen-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  white-space: pre-wrap;
+  line-height: 2.8rem;
+}
+.full-screen-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  white-space: pre-wrap;
+  line-height: 2.8rem;
+}
+.full-screen-input::-ms-input-placeholder { /* Microsoft Edge */
+  white-space: pre-wrap;
+  line-height: 2.8rem;
+}
+
 @media screen and (max-width: 375px) {
   .full-screen-input {
     font-size: 1.4rem !important;
@@ -22,3 +43,4 @@ input[type=text].full-screen-input:focus:not([readonly]) {
     font-size: 1.9rem !important;
   }
 }
+

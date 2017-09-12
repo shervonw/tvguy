@@ -59,7 +59,7 @@
   }
 }
 
-@media screen and (min-width: 426px) {
+@media screen and (min-width: 426px) and (max-width: 1024px) {
   .recent-episode-poster-container {
     height: 12.5rem;
   }

@@ -1,10 +1,11 @@
+import moment from'moment';
+import _ from 'lodash';
+
 import {
   noPosterPortrait,
   noPosterLandscape
 } from '../constants';
 
-import moment from'moment';
-import _ from 'lodash';
 
 export const actionCreator = (type, payload) => ({
   type: type,
@@ -45,9 +46,17 @@ export const airDays = (days) => {
   }
 }
 
+export const dateFormat = (date) => {
+  if (date === '' || date === null || !date) {
+    return 'unknown';
+  } else {
+    return moment(date).format('MMMM D, YYYY');
+  }
+}
+
 export const timeFormat = (time) => {
-  if (time === '') {
-    return '(Unknown time)';
+  if (time === '' || time === null || !time) {
+    return 'unknown';
   } else {
     return moment(time, 'HH:mm').format('h:mma');
   }  

@@ -16,6 +16,9 @@ const fetchTVShowEpisode = (id, season, episode, callback) => dispatch => {
         type: FETCH_TV_SHOW_EPISODE, 
         payload: res.body 
       });
+
+      if (callback)
+        callback(res.body);
     }
     
   });

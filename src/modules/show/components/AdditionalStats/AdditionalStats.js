@@ -2,7 +2,7 @@ import React from 'react';
 import moment from'moment';
 import { Table } from 'react-materialize';
 import { showExternals } from '../../constants';
-import { airDays, timeFormat } from '../../../core/utilities';
+import { airDays, dateFormat, timeFormat } from '../../../core/utilities';
 import { map } from 'lodash';
 import './style.css';
 
@@ -44,7 +44,7 @@ const AdditionalStats = ({ show }) => {
           </tr>
           <tr>
             <td>Premiered</td>
-            <td>{ moment(show.premiered).format('MMMM DD, YYYY') }</td>
+            <td>{ dateFormat(show.premiered) }</td>
           </tr>
         </tbody>
       </Table>

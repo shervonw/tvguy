@@ -22,7 +22,9 @@ class Shows extends Component {
 
   queryForShows(query) {
     const { queryForTVShows } = this.props;
-    queryForTVShows(query);
+    const encodedURI = encodeURIComponent(query);
+
+    queryForTVShows(encodedURI);
     
     if (query !== "") {
       this.setState({
@@ -41,7 +43,7 @@ class Shows extends Component {
         {
           shows &&
           <Row style={{ marginTop: 50, }}>
-            <Input s={12} type="text" label="Search for a TV Show" onChange={ (e) => debouncedQuery(e.target.value) } />
+            <Input s={12} type="text" label="Search for your favorite TV Show" onChange={ (e) => debouncedQuery(e.target.value) } />
             
             { (shows && shows.length === 0 ) &&
               <Col s={12} style={{ color: 'rgba(0,0,0,0.6)' }}>

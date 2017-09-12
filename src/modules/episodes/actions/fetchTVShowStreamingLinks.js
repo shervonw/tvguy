@@ -17,6 +17,9 @@ const fetchTVShowStreamingLinks = (name, episode, callback) => dispatch => {
         type: FETCH_TV_SHOW_STREAMING_LINKS, 
         payload: res.body 
       });
+
+      if (callback)
+        callback(res.body);
     }
   });
   

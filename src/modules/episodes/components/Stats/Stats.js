@@ -14,14 +14,16 @@ const Stats = ({ episode }) => {
   
   return (
     <div className="details">
-      { (episode.number === 1) &&
-        <span className="green white-text" style={{ fontSize: '0.7rem', paddingTop: 3, paddingBottom: 3, paddingLeft: 5, paddingRight: 5 }}>
-          Season Premiere
-        </span>
-      }
-      <h1 style={{ margin: '1rem 0 1.56rem 0' }}>
+      <h1 style={{ marginTop: '1rem', marginBottom: 2 }}>
         { `${episode.season}x${pad(episode.number)}` } { episode.name }
       </h1>
+      <div style={{ marginBottom: '2rem' }}>
+        { (episode.number === 1) &&
+          <span className="green white-text" style={{ fontSize: '0.7rem', paddingTop: 3, paddingBottom: 3, paddingLeft: 5, paddingRight: 5, marginBottom: '2rem', borderRadius: 2 }}>
+            Season Premiere
+          </span>
+        }
+      </div>
       <Table className="bordered">
         <tbody>
           <tr>

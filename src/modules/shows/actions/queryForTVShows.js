@@ -13,6 +13,8 @@ const queryForTVShows = (query, callback) => dispatch => {
         payload: shows 
       });
       
+      if (callback)
+        callback(res.body);
     }
   });
 }

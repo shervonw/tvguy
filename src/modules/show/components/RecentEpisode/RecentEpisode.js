@@ -20,7 +20,7 @@ const RecentEpisode = ({ id, episode, title }) => {
           <div className="recent-episode-titles-container">
             <a href={ `/shows/${id}/seasons/${episode.season}/episodes/${episode.number}` }>
               <div>
-                <span className="blue white-text">
+                <span className="blue white-text" style={{ borderRadius: 2 }}>
                   { moment(episode.airstamp).format("MMM D, YYYY h:mm a") }
                 </span>
               </div>

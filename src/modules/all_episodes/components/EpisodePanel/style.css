@@ -1,0 +1,102 @@
+.episode-panel-container {
+  display: flex;
+  align-items: flex-start;
+  color: rgba(0, 0, 0, 0.76);
+}
+
+.episode-panel-img-container, .episode-panel-text-container {
+  height: 10.62rem;
+}
+
+.episode-panel-img-container {
+  min-width: 18.88rem;
+  max-width: 18.88rem;
+}
+
+.episode-panel-text-container {
+  width: 100%;
+  height: auto;
+}
+
+.episode-panel-text-container > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(229, 229, 229, 0.26);
+  padding: 1rem;
+}
+
+.episode-panel-text-container > div > h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.1;
+  color: #000;
+}
+
+.episode-panel-text-container > div > h4 > span > span {
+  color: #2196F3;
+}
+
+.episode-panel-text-container > div > h4 > p {  
+  margin-top: 0.32rem;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.66);
+  line-height: 1.4;
+}
+
+.episode-panel-text-container > div > h4 > p > i {  
+  font-size: 0.8rem;
+  color: rgba(182, 182, 182, 0.95);
+}
+
+.episode-panel-summary-text > p {
+  margin: 0 1rem;
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .episode-panel-img-container {
+    margin: auto;
+    width: 100%;
+  }
+
+  .episode-panel-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+  .episode-panel-text-container > div > h4 {
+    font-size: 1.1rem;
+  }
+
+  .episode-panel-text-container > div > h4 > p {  
+    font-size: 0.8rem;
+  }
+
+  .episode-panel-text-container > div > h4 > p > i {  
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .episode-panel-img-container {
+    height: 12.62rem;
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  .episode-panel-img-container {
+    height: 14.62rem;
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 425px) {
+  .episode-panel-img-container {
+    height: 16.62rem;
+    max-width: none;
+  }
+}

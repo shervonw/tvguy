@@ -7,7 +7,6 @@ import './style.css';
 const EpisodePoster = ({ episode }) => {
   const posterImage = (episode.image) ? episode.image.original : null;
   
-
   return (
     <div>
       <Row>

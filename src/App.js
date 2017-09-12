@@ -8,10 +8,14 @@ import store from './store';
 import './App.css';
 
 import { NavBar, TopNav } from './modules/core/components';
-import { Home } from './modules/home';
-import { Show } from './modules/show';
-import { Shows } from './modules/shows';
-import { Episodes } from './modules/episodes';
+import { 
+  Home,
+  Show,
+  Shows,
+  Episodes,
+  AllEpisodes
+} from './modules';
+
 
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory();
@@ -71,6 +75,7 @@ class App extends Component {
             <Route exact path="/shows" component={ Shows } /> 
             <Route exact path="/shows/:id" component={ Show } /> 
             <Route exact path="/shows/:id/seasons/:season/episodes/:episode" component={ Episodes } />
+            <Route exact path="/shows/:id/seasons/all" component={ AllEpisodes } />
           </div>
         </ConnectedRouter>
       </Provider>

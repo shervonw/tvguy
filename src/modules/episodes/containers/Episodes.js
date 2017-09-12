@@ -17,6 +17,10 @@ import {
 
 
 class Episode extends Component {
+  state = {
+    isSearchingForStreamingLinks: true
+  }
+
   componentWillMount() {
     const {
       fetchTVShowData,
@@ -35,8 +39,21 @@ class Episode extends Component {
       fetchTVShowStreamingLinks
     } = nextProps;
 
-    if (show && episode && !episode.streamingLinks) {
-      fetchTVShowStreamingLinks(show.name, episode);
+    const { isSearchingForStreamingLinks } = this.state;
+
+    if (show && episode && !episode.streamingLinks && isSearchingForStreamingLinks) {
+
+      fetchTVShowStreamingLinks(show.name, episode, (links) => {
+        if (links.length === 0) {
+          const message = `We are unable to provide streaming links for ${episode.name}`;
+          window.Materialize.toast(message, 4000);
+        }
+      });
+
+      this.setState({
+        isSearchingForStreamingLinks: false
+      });
+
     }
   }
 
@@ -45,11 +62,6 @@ class Episode extends Component {
     
     if (!episode) {
       return false;
-    }
-
-    if (episode.streamingLinks && episode.streamingLinks.length === 0) {
-      const message = `We are unable to provide streaming links for ${episode.name}`;
-      window.Materialize.toast(message, 4000);
     }
 
     const summary = episode.summary || '<div />';
@@ -121,7 +133,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchTVShowEpisode: (id, season, episode, callback) => dispatch(fetchTVShowEpisode(id, season, episode, callback)),
-  fetchTVShowStreamingLinks: (name, episode) => dispatch(fetchTVShowStreamingLinks(name, episode)),
+  fetchTVShowStreamingLinks: (name, episode, callback) => dispatch(fetchTVShowStreamingLinks(name, episode, callback)),
   fetchTVShowData: (params, callback) => dispatch(fetchTVShowData(params, callback)),
 });
 

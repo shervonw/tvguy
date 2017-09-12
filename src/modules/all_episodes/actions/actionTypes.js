@@ -1,0 +1,1 @@
+export const GET_ALL_EPISODES = 'allEpisodes/GET_ALL_EPISODES';

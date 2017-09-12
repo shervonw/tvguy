@@ -61,7 +61,7 @@ class Show extends Component {
           }
         </Row>
 
-        <ViewAllEpisodes />
+        <ViewAllEpisodes id={ match.params.id } />
 
         {
           (show._embedded.cast && show._embedded.cast.length > 0) &&
